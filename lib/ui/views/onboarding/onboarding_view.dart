@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe/app/routes.dart';
 import 'package:recipe/core/constants/image_constants.dart';
 import 'package:recipe/core/managers/color_manager.dart';
 import 'package:recipe/core/managers/style_manager.dart';
@@ -93,7 +94,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         )),
               ),
               (data.counter == 2) ? InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, RouteManager.authentication);
+                },
                 child: const Image(image: AssetImage(RecipeImageConstants.getStartedButton)),
               ) : FloatingActionButton(
                 backgroundColor: Colors.white,

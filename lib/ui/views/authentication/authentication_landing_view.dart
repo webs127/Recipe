@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/app/routes.dart';
 import 'package:recipe/core/constants/image_constants.dart';
 import 'package:recipe/core/constants/text_constants.dart';
 import 'package:recipe/core/managers/color_manager.dart';
@@ -12,7 +13,8 @@ class AuthenticationLandingView extends StatefulWidget {
   const AuthenticationLandingView({Key? key}) : super(key: key);
 
   @override
-  State<AuthenticationLandingView> createState() => _AuthenticationLandingViewState();
+  State<AuthenticationLandingView> createState() =>
+      _AuthenticationLandingViewState();
 }
 
 class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
@@ -32,26 +34,30 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Image(image: AssetImage(RecipeImageConstants.logoHeaderBlack)),
+                  const Image(
+                      image: AssetImage(RecipeImageConstants.logoHeaderBlack)),
                   const RecipeSpacer.height(),
                   RichText(
-                    textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
                       text: TextSpan(
-                    text: "Join us and cook like a ",
-                    style: RecipeTextStyleManager.mediumTextStyle(color: Colors.black, fontSize: 30),
-                    children: [
-                      TextSpan(
-                        text: "Professional",
-                        style: RecipeTextStyleManager.mediumTextStyle(color: Colors.red, fontSize: 30),
-
-                      )
-                    ]
-                  ))
+                          text: "Join us and cook like a ",
+                          style: RecipeTextStyleManager.mediumTextStyle(
+                              color: Colors.black, fontSize: 30),
+                          children: [
+                            TextSpan(
+                              text: "Professional",
+                              style: RecipeTextStyleManager.mediumTextStyle(
+                                  color: Colors.red, fontSize: 30),
+                            )
+                          ]))
                 ],
               ),
             ),
             const RecipeSpacer.largeHeight(),
             RecipeButton(
+              onPresses: () {
+                Navigator.pushNamed(context, RouteManager.signUp);
+              },
               textColor: RecipeColorManager.black,
               text: RecipeTextConstants.email,
               borderColor: RecipeColorManager.black,
@@ -63,21 +69,26 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(child: RecipeDividerWidget(color: RecipeColorManager.grey, thickness: 1.5,)),
+                  Expanded(
+                      child: RecipeDividerWidget(
+                    color: RecipeColorManager.grey,
+                    thickness: 1.5,
+                  )),
                   const Padding(
-                    padding: EdgeInsets.symmetric(horizontal:16.0),
-                    child: RecipeTextWidget(
-                      "or"
-                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    child: RecipeTextWidget("or"),
                   ),
-                  Expanded(child: RecipeDividerWidget(color: RecipeColorManager.grey, thickness: 1.5,)),
-
-
+                  Expanded(
+                      child: RecipeDividerWidget(
+                    color: RecipeColorManager.grey,
+                    thickness: 1.5,
+                  )),
                 ],
               ),
             ),
             const RecipeSpacer.largeHeight(),
             RecipeButton(
+              onPresses: () {},
               textColor: RecipeColorManager.black,
               text: RecipeTextConstants.google,
               borderColor: RecipeColorManager.black,
@@ -85,6 +96,7 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
             ),
             const RecipeSpacer.mediumHeight(),
             RecipeButton(
+              onPresses: () {},
               textColor: Colors.white,
               text: RecipeTextConstants.facebook,
               borderColor: RecipeColorManager.blue,
@@ -93,6 +105,7 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
             ),
             const RecipeSpacer.mediumHeight(),
             RecipeButton(
+              onPresses: () {},
               textColor: Colors.white,
               text: RecipeTextConstants.apple,
               borderColor: RecipeColorManager.black,
@@ -101,6 +114,7 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
             ),
             const RecipeSpacer.mediumHeight(),
             RecipeButton(
+              onPresses: () {},
               textColor: Colors.white,
               text: RecipeTextConstants.guest,
               borderColor: RecipeColorManager.splash,
@@ -108,16 +122,18 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
               imageUrl: RecipeImageConstants.guestLogo,
             ),
             const RecipeSpacer.mediumHeight(),
-            RichText(text: TextSpan(
-              text: RecipeTextConstants.alreadyHaveAnAccount,
-                style: RecipeTextStyleManager.semiBoldTextStyle(color: Colors.black, fontSize: 17),
-              children: [
-                TextSpan(text: RecipeTextConstants.login,
-                  style: RecipeTextStyleManager.semiBoldTextStyle(color: RecipeColorManager.splash, fontSize: 17),
-                )
-              ]
-            ))
-
+            RichText(
+                text: TextSpan(
+                    text: RecipeTextConstants.alreadyHaveAnAccount,
+                    style: RecipeTextStyleManager.semiBoldTextStyle(
+                        color: Colors.black, fontSize: 17),
+                    children: [
+                  TextSpan(
+                    text: RecipeTextConstants.login,
+                    style: RecipeTextStyleManager.semiBoldTextStyle(
+                        color: RecipeColorManager.splash, fontSize: 17),
+                  )
+                ]))
           ],
         ),
       ),

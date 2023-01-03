@@ -10,14 +10,14 @@ class RecipeButton extends StatelessWidget {
   final Function()? onPresses;
   final Color textColor;
   final Color borderColor;
-  final String imageUrl;
+  final String? imageUrl;
 
   const RecipeButton({
     Key? key,
     required this.text,
     required this.textColor,
     required this.borderColor,
-    required this.imageUrl,
+    this.imageUrl,
     this.addImage = true,
     this.fillColor,
     this.onPresses,
@@ -40,7 +40,7 @@ class RecipeButton extends StatelessWidget {
           children: [
             (addImage) ? Image(
               image: AssetImage(
-                imageUrl,
+                imageUrl!,
               ),
               width: 25,
               height: 25,

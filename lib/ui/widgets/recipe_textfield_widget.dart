@@ -4,6 +4,7 @@ import 'package:recipe/core/managers/style_manager.dart';
 
 class RecipeTextFieldWidget extends StatelessWidget {
   final String? labelText;
+  final Function()? onPressed;
   final TextEditingController? controller;
   final String? Function(String? data)? validator;
   final bool obscureText;
@@ -11,6 +12,7 @@ class RecipeTextFieldWidget extends StatelessWidget {
   const RecipeTextFieldWidget({
     Key? key,
     this.labelText,
+    this.onPressed,
     this.obscureText = false,
     this.validator,
     this.iconData,
@@ -27,8 +29,12 @@ class RecipeTextFieldWidget extends StatelessWidget {
         labelText: labelText,
         labelStyle: RecipeTextStyleManager.regularTextStyle(
             color: RecipeColorManager.black, fontSize: 18),
-        suffixIcon: Icon(
-          iconData,
+        suffixIcon: IconButton(
+          onPressed: onPressed,
+          icon: Icon(
+            iconData,
+            color: RecipeColorManager.black,
+          ),
           color: RecipeColorManager.black,
         ),
         border: UnderlineInputBorder(

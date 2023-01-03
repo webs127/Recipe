@@ -41,8 +41,7 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Image(
-                      image:
-                      AssetImage(RecipeImageConstants.logoHeaderBlack)),
+                      image: AssetImage(RecipeImageConstants.logoHeaderBlack)),
                   const RecipeSpacer.height(),
                   RecipeTextWidget(
                     RecipeTextConstants.verification,
@@ -80,19 +79,18 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
                     style: RecipeTextStyleManager.semiBoldTextStyle(
                         color: Colors.black, fontSize: 17),
                     children: [
-                      TextSpan(
-                        text: RecipeTextConstants.resend,
-                        recognizer: TapGestureRecognizer()..onTap = () {
-                          Navigator.pushNamed(context, RouteManager.signIn);
-                        },
-                        style: RecipeTextStyleManager.semiBoldTextStyle(
-                            color: RecipeColorManager.splash, fontSize: 17),
-                      )
-                    ])),
+                  TextSpan(
+                    text: RecipeTextConstants.resend,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {},
+                    style: RecipeTextStyleManager.semiBoldTextStyle(
+                        color: RecipeColorManager.splash, fontSize: 17),
+                  )
+                ])),
             const RecipeSpacer.largeHeight(),
             RecipeButton(
               onPresses: () {
-                Navigator.pushNamed(context, RouteManager.email);
+                Navigator.pushNamed(context, RouteManager.accountSetUp);
               },
               addImage: false,
               fillColor: RecipeColorManager.splash1,
@@ -101,7 +99,6 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
               borderColor: RecipeColorManager.splash,
               imageUrl: RecipeImageConstants.googleLogo,
             ),
-
           ],
         ),
       ),

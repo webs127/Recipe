@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe/app/routes.dart';
 import 'package:recipe/core/constants/image_constants.dart';
@@ -130,6 +131,9 @@ class _AuthenticationLandingViewState extends State<AuthenticationLandingView> {
                     children: [
                   TextSpan(
                     text: RecipeTextConstants.login,
+                    recognizer: TapGestureRecognizer()..onTap = () {
+                      Navigator.pushNamed(context, RouteManager.signIn);
+                    },
                     style: RecipeTextStyleManager.semiBoldTextStyle(
                         color: RecipeColorManager.splash, fontSize: 17),
                   )

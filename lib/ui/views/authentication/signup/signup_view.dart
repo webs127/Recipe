@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:recipe/app/routes.dart';
 import 'package:recipe/core/constants/image_constants.dart';
 import 'package:recipe/core/constants/text_constants.dart';
 import 'package:recipe/core/managers/color_manager.dart';
@@ -118,7 +119,9 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
                 const RecipeSpacer.largeHeight(),
                 RecipeButton(
-                  onPresses: () {},
+                  onPresses: () {
+                    Navigator.pushNamed(context, RouteManager.email);
+                  },
                   addImage: false,
                   fillColor: RecipeColorManager.splash1,
                   textColor: RecipeColorManager.white,
